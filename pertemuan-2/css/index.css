@@ -1,0 +1,40 @@
+body {
+  text-align: center;
+}
+#paragraph-red {
+  color: red;
+}
+
+#id-small {
+  font-size: 10px;
+}
+
+/* h1 {
+  font-size: 100px;
+} */
+p,
+h1 {
+  color: aqua !important;
+  font-size: 50px;
+  font-family: sans-serif;
+}
+
+/* p.uppercase {
+  text-transform: uppercase;
+} */
+
+.paragraph-class {
+  color: blue;
+}
+
+.paragraph-large {
+  font-size: 100px;
+}
+
+.middle {
+  text-align: center;
+}
+
+/* .uppercase {
+  text-transform: uppercase;
+} */
