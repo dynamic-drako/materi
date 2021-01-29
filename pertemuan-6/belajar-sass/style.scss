@@ -1,0 +1,34 @@
+// Module
+@import './color.scss';
+
+// create Mixin (like function in js)
+@mixin style-border($border-weight){
+  border: $border-weight solid $primary-color;
+}
+
+// create Extend (like mixin whitout params)
+%style-background{
+  background-color: $secondary-color;
+}
+
+h1 {
+  color: $primary-color; 
+  // call extend
+  @extend %style-background;
+}
+
+h2 {
+  color: $primary-color;
+}
+
+section {
+  // nesting
+  p {
+    // call mixin
+    @include style-border(1px)
+  }
+
+  a {
+    @include style-border(5px)
+  }
+}
