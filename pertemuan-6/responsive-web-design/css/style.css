@@ -1,0 +1,26 @@
+body {
+  background-color: bisque;
+}
+p {
+  font-size: 100px;
+}
+
+@media screen and (max-width: 800px) and (min-width: 500px) {
+  body {
+    background-color: blue;
+  }
+
+  p {
+    font-size: 70px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: red;
+  }
+
+  p {
+    font-size: 50px;
+  }
+}
