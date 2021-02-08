@@ -62,8 +62,21 @@ let regex11 = /fa+/;
 // console.log(regex11.test("faaa"));
 
 let regex12 = /^Saya suka belajar coding$|^Saya suka tidur$/;
-console.log(regex12.test("saya suka belajar coding"));
-console.log(regex12.test("Saya suka belajar coding setiap hari"));
-console.log(regex12.test("Saya suka belajar coding"));
-console.log(regex12.test("Saya suka tidur"));
-console.log(regex12.test("saya suka tidur"));
+// console.log(regex12.test("saya suka belajar coding"));
+// console.log(regex12.test("Saya suka belajar coding setiap hari"));
+// console.log(regex12.test("Saya suka belajar coding"));
+// console.log(regex12.test("Saya suka tidur"));
+// console.log(regex12.test("saya suka tidur"));
+
+const display = () => {
+  console.log("tes");
+  const input = document.getElementById("inputName").value;
+  console.log(input);
+  const regex = /[A-Z]/;
+  console.log(regex.test(input));
+  if (regex.test(input) === true) {
+    console.log("huruf pertama huruf besar");
+  } else {
+    console.log("huruf pertama huruf kecil");
+  }
+};
