@@ -70,7 +70,7 @@ let regex12 = /^Saya suka belajar coding$|^Saya suka tidur$/;
 
 const display = () => {
   console.log("tes");
-  const input = document.getElementById("inputName").value;
+  let input = document.getElementById("inputName").value;
   console.log(input);
   const regex = /[A-Z]/;
   console.log(regex.test(input));
@@ -79,4 +79,5 @@ const display = () => {
   } else {
     console.log("huruf pertama huruf kecil");
   }
+  input = "";
 };
