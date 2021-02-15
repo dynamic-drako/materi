@@ -13,6 +13,8 @@ const getData = async () => {
   result.map((item) => {
     // document.write(`${item.name} <br/>`);
     let cardDisplay = document.createElement("div");
+
+    // ================ Cara 1 =====================
     cardDisplay.innerHTML = `<p>${item.name}</p>`;
     displayListInventory.appendChild(cardDisplay);
 
@@ -27,6 +29,14 @@ const getData = async () => {
     let cardUpdateText = document.createTextNode("Updatee");
     cardUpdate.appendChild(cardUpdateText);
     displayListInventory.appendChild(cardUpdate);
+
+    // ================ Cara 2 =====================
+    // cardDisplay.innerHTML = `
+    //   <span>${item.name}</span>
+    //   <button>delete</button>
+    //   <button>update</button>
+    // `;
+    // displayListInventory.appendChild(cardDisplay);
   });
 };
 getData();
