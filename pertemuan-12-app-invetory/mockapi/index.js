@@ -22,6 +22,18 @@ const getData = async () => {
     cardDelete.appendChild(cardDeleteText);
     displayListInventory.appendChild(cardDelete);
 
+    // cardDelete.setAttribute("onclick", `deleteData('${item.id}')`);
+    // cardDelete.addEventListener("click", deleteData.bind(this, item.id));
+    cardDelete.addEventListener("click", () => {
+      deleteData(item.id);
+    });
+
+    // cardDelete.addEventListener("click", () => {
+    //   deleteData(item.id);
+    //   console.log(item.id);
+    // });
+    console.log("id", item.id);
+
     // button update
     let cardUpdate = document.createElement("button");
     let cardUpdateText = document.createTextNode("Updatee");
@@ -88,6 +100,9 @@ const addData = async (event) => {
 };
 addInventorySubmit.addEventListener("click", addData);
 
-const deleteData = () => {};
+const deleteData = (id) => {
+  // console.log("tesdata", event);
+  console.log("button delete di click", id);
+};
 
 const updateData = () => {};
