@@ -26,6 +26,7 @@ const getData = async () => {
 
     // cardDelete.setAttribute("onclick", `deleteData('${item.id}')`);
     // cardDelete.addEventListener("click", deleteData.bind(this, item.id));
+
     cardDelete.addEventListener("click", () => {
       deleteData(item.id);
     });
@@ -41,6 +42,9 @@ const getData = async () => {
     let cardUpdateText = document.createTextNode("Updatee");
     cardUpdate.appendChild(cardUpdateText);
     displayListInventory.appendChild(cardUpdate);
+    cardUpdate.addEventListener("click", () => {
+      updateData(item.id);
+    });
 
     // ================ Cara 2 =====================
     // cardDisplay.innerHTML = `
@@ -110,9 +114,50 @@ const addData = async (event) => {
 };
 addInventorySubmit.addEventListener("click", addData);
 
-const deleteData = (id) => {
-  // console.log("tesdata", event);
+const deleteData = async (id) => {
   console.log("button delete di click", id);
+
+  const url = `https://5fd866537e05f000170d272e.mockapi.io/inventory/${id}`;
+
+  try {
+    const response = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(response);
+    const responseJSON = await response.json();
+    console.log(responseJSON);
+  } catch (error) {
+    console.log(error);
+  }
+
+  getData();
 };
 
-const updateData = () => {};
+const updateData = async (id) => {
+  console.log("id dalam update", id);
+
+  const url = "https://5fd866537e05f000170d272e.mockapi.io/inventory/";
+  let dataUpdate = prompt("masukan update data");
+  let dataObj = {
+    name: dataUpdate,
+  };
+  let dataJSON = JSON.stringify(dataObj);
+  console.log(dataJSON);
+
+  const setting = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: dataJSON,
+  };
+
+  const fetchResponse = await fetch(url + id, setting);
+  const dataResponse = await fetchResponse.json();
+  console.log(dataResponse);
+
+  getData();
+};
