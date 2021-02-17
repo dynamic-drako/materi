@@ -25,6 +25,7 @@ const signin = () => {
         alert("user ditemukan");
         if (user[0].password === passwordInput) {
           localStorage.setItem("user", JSON.stringify(user[0]));
+          localStorage.setItem("isLoggedin", true);
           alert("login berhasil");
           window.location.href = "./cart.html";
         } else {

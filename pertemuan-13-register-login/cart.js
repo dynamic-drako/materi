@@ -7,6 +7,9 @@ const showCartUser = async () => {
   let dataUserObj = JSON.parse(dataUserJSON);
   console.log(dataUserObj);
 
+  let displayNama = document.querySelector("#namaUser");
+  displayNama.innerHTML = `<p>${dataUserObj.name}</p>`;
+
   let response = await fetch(
     `https://5fd866537e05f000170d272e.mockapi.io/user/${dataUserObj.id}/cart`
   );
