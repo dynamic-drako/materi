@@ -26,3 +26,14 @@ const showCartUser = async () => {
 };
 
 showCartUser();
+
+let btnLogout = document.querySelector("#logout")
+btnLogout.addEventListener("click", () => {
+  console.log("TESSSS");
+  // Menghapus data di dlm localstorage
+  localStorage.removeItem("user")
+  localStorage.removeItem("isLoggedin")
+
+  // Pindah halaman
+  window.location.href = "./index.html"
+})

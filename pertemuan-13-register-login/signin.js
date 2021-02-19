@@ -21,13 +21,17 @@ const signin = () => {
       const user = result.filter((user) => user.email === emailInput);
       console.log(user);
       console.log(user[0]);
+
+      let {password, ...restUser} = user[0]
+
       if (user.length > 0) {
         alert("user ditemukan");
-        if (user[0].password === passwordInput) {
-          localStorage.setItem("user", JSON.stringify(user[0]));
+
+        if (password === passwordInput) {
+          localStorage.setItem("user", JSON.stringify(restUser));
           localStorage.setItem("isLoggedin", true);
           alert("login berhasil");
-          window.location.href = "./cart.html";
+          window.location.href = "./index.html";
         } else {
           alert("password anda salah");
         }
