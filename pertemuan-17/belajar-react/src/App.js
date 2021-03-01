@@ -11,42 +11,39 @@ import Navbar from "./components/Navbar";
 
 // page
 import Profile from "./pages/Profile";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
 
 import "./App.css";
 // Function compnent
 function App() {
-  // const [number, setNumber] = useState(9999);
-  // const [name, setName] = useState("Thoriq");
-  // function increase() {
-  //   setNumber(number + 1);
-  // }
-
-  // function decrease() {
-  //   if (number > 0) setNumber(number - 1);
-  // }
-
-  // const changeName = () => {
-  //   setName("impact byte");
-  // };
   return (
-    <Router>
+    // <Router>
       <div style={{ paddingLeft: "20px" }}>
+
+        <Navbar />
+        <h1>React Routing</h1>
+
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/profile/:name">
+            <Profile />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+      </div>
+    // </Router>
+  );
+}
+
+export default App;
+
         {/* <Header char="Alpha" age={20} number={number} />
         <Counter number={number} increase={increase} decrease={decrease} />
         <CounterClass number={number} increase={increase} decrease={decrease} />
         <Biodata name={name} changeName={changeName} />
         <Forms /> */}
-        <Navbar />
-        <h1>React Routing</h1>
-
-        <Switch>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
-}
-
-export default App;
