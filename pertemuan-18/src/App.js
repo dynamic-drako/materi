@@ -13,6 +13,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Gallery from "./pages/Gallery";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path="/register">
           <Register />
+        </Route>
+        <Route path="/gallery">
+          <Gallery />
         </Route>
       </Switch>
     </Router>

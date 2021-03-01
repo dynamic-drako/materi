@@ -7,6 +7,7 @@ function Header() {
       <Link to="/dashboard">dashboard</Link>
       <Link to="/login">Login</Link>
       <Link to="/register">register</Link>
+      <Link to="/gallery">gallery</Link>
     </div>
   );
 }
