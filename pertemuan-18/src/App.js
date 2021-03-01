@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Gallery from "./pages/Gallery";
+import Todo from "./pages/Todo";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
         </Route>
         <Route path="/gallery">
           <Gallery />
+        </Route>
+        <Route path="/todo">
+          <Todo />
         </Route>
       </Switch>
     </Router>
