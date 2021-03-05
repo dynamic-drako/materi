@@ -2,6 +2,7 @@
 // import Header from "./components/Header";
 // import Profile from "./pages/Profile";
 import Counter from "./components/Counter";
+import Data from "./components/Data";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         </Switch>
       </Router> */}
       <Counter />
+      <Data />
     </div>
   );
 }

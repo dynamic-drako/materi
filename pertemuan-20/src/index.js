@@ -10,3 +10,8 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+// import { createStore } from "redux";
+// import Counter from "./redux/reducers/counter.reducers";
+
+// const storeReducers = createStore(Counter);

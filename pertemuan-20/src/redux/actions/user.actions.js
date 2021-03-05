@@ -25,15 +25,17 @@ export const getDataRequest = () => {
   };
 };
 
-export const getDataSuccess = () => {
+export const getDataSuccess = (result) => {
   return {
     type: GET_DATA_SUCCESS,
+    result,
   };
 };
 
-export const getDataFailed = () => {
+export const getDataFailed = (error) => {
   return {
     type: GET_DATA_FAILED,
+    error,
   };
 };
 
