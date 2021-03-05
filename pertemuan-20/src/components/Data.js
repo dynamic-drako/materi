@@ -4,10 +4,10 @@ import { getData } from "../redux/actions/user.actions";
 
 function Data(props) {
   console.log(props);
-
+  const getData = props.getData;
   useEffect(() => {
-    props.getData();
-  }, []);
+    getData();
+  }, [getData]);
   return (
     <div>
       <h1>Data dari redux</h1>
