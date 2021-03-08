@@ -5,7 +5,8 @@ import { Modal, Button, Form } from "react-bootstrap";
 
 function CounterHooks() {
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter);
+  const counter = useSelector((state) => state.Counter.counter);
+  console.log(counter);
 
   const [dataModal, setDataModal] = useState("");
   const [dataShow, setDataShow] = useState("");
