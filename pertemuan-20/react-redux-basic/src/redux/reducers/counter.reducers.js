@@ -1,7 +1,7 @@
 import { INCREMENT, DECREMENT } from "../actions/counter.actions";
 
 const initialState = {
-  counter: 0,
+  counter: 99999999,
 };
 
 const counter = (state = initialState, action) => {
@@ -10,13 +10,13 @@ const counter = (state = initialState, action) => {
       return {
         ...state,
         counter: state.counter + 1,
-        person: action.person
+        person: action.person,
       };
     case DECREMENT:
       return {
         ...state,
         counter: state.counter - 1,
-        data: action.data
+        // data: action.data
       };
     default:
       return state;

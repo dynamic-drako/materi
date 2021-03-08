@@ -1,11 +1,13 @@
 import "./App.css";
 import Header from "./components/Header";
-import CounterHooks from "./page/Counter";
+import Counter from "./page/Counter";
+import CounterHooks from "./page/CounterHooks";
 
 function App() {
   return (
     <div className="App">
       <Header />
+      {/* <Counter /> */}
       <CounterHooks />
     </div>
   );

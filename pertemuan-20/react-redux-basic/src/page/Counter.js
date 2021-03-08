@@ -6,7 +6,7 @@ function Counter(props) {
 
   return (
     <div>
-      <button onClick={() => props.increment({nama: "auzan"})}> + </button>
+      <button onClick={() => props.increment({ nama: "auzan" })}> + </button>
       <h1>{props.counter}</h1>
       <button onClick={() => props.decrement()}> - </button>
     </div>
@@ -16,15 +16,14 @@ function Counter(props) {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-    counter: state.counter
-  }
-}
-
+    counter: state.counter,
+  };
+};
 const mapDispatchToProps = (dispatch) => {
   return {
     increment: (person) => dispatch(addCounter(person)),
-    decrement: () => dispatch(minusCounter())
-  }
-}
+    decrement: () => dispatch(minusCounter()),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
