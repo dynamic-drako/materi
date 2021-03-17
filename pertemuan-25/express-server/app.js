@@ -3,33 +3,33 @@ const app = express()
 
 const PORT = process.env.PORT || 3000
 
-const users = [
+// Data
+let users = [
   {id:1, username:"auzan"},
   {id:2, username:"yoshi"},
   {id:3, username:"faay"},
 ]
 
+// Middleware
 app.use(express.json())
 
+// Routing
 app.get("/", (req, res) => {
   res.json({
     message: "wellcome to the jungle"
   })
 })
 
-app.get("/user", (req, res) => {
+app.get("/", (req, res) => {
   res.json({
     message: "success get users",
     data: users
   })
 })
 
-app.get("/user/:id", (req, res) => {
+app.get("/:id", (req, res) => {
   const id = req.params.id
-  console.log(id);
-
   const user = users.find(item => item.id == id)
-  console.log(user);
 
   res.json({
     message: "success get user",
@@ -37,7 +37,7 @@ app.get("/user/:id", (req, res) => {
   })
 })
 
-app.post("/user", (req, res) => {
+app.post("/", (req, res) => {
   const user = req.body
   console.log(user);
 
@@ -49,6 +49,7 @@ app.post("/user", (req, res) => {
   })
 })
 
+// Listen
 app.listen(PORT, () => {
   console.log("Server running on port", PORT);
 })
