@@ -1,29 +1,31 @@
-create database school;
+CREATE DATABASE school;
 
 use school;
 
-CREATE TABLE users (
-  id int PRIMARY KEY AUTO_INCREMENT,
-  name varchar(45),
-  email varchar(45),
-  birth_date date,
-);
-
 CREATE TABLE class (
-  id int PRIMARY KEY AUTO_INCREMENT,
-  name varchar(45)
+	id int PRIMARY KEY auto_increment,
+    class varchar(5)
 );
 
-INSERT INTO users (name, email, birth_date, ) VALUES 
-('Alpha','alpha@gmail.com','2000-12-12',1),
-('Beta','beta@gmail.com','2000-11-11',3),
-('Charlie','chalie@gmail.com','2000-11-11',4),
-('Delta','delta@gmail.com','2000-11-11',2),
-('Echo','echo@gmail.com','2000-11-11',6),
-('Foxtrot','foxtrot@gmail.com','2000-11-11',6);
-
-
-INSERT INTO class (name) VALUES 
+INSERT INTO class(class) VALUES
 ('1A'),
 ('1B'),
-('1C'),
+('1C');
+
+CREATE TABLE student (
+	id int PRIMARY KEY auto_increment,
+    name varchar(50),
+    email varchar(50),
+    birth_date date,
+    class_id int,
+    FOREIGN KEY (class_id) references class(id)
+);
+
+INSERT INTO student (name, email, birth_date, class_id) VALUES
+('aan', 'aan@gmail.com', '2000-12-12', 1),
+('bambang', 'aan@gmail.com', '2000-12-12', 2),
+('charlie', 'aan@gmail.com', '2000-12-12', 1);
+
+select *
+from student join class
+on student.class_id = class.id
