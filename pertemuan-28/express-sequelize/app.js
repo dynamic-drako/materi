@@ -4,16 +4,9 @@ const app = express()
 
 const sequelize = require('./config/db');
 const User = require('./models/User');
-
 const routes = require('./routes');
 
 const PORT = process.env.PORT || 3000
-
-app.use(cors())
-app.options('*', cors());
-
-app.use(express.json())
-app.use(routes)
 
 async function testConnection () {
   try {
@@ -28,6 +21,11 @@ async function testConnection () {
 }
 
 testConnection()
+
+app.use(cors())
+app.use(express.json())
+
+app.use(routes)
 
 app.listen(PORT, () => {
   console.log("server running on port", PORT);
