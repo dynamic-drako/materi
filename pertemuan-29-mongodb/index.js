@@ -2,6 +2,9 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
+// MONGODB_LIVE=mongodb+srv://draco:draco@school.l4h2l.mongodb.net/School?retryWrites=true&w=majority
+// PORT=9999
+
 // port
 const { PORT, dbConfigMongo } = require("./config");
 const localPort = PORT || 3000;
