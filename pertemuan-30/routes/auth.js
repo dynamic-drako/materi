@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const router = express.Router()
 
 const { Student } = require('../models');
+const {JWT_KEY} = require("../config")
 
 router.post("/register", async (req, res) => {
   const user = req.body
@@ -35,7 +36,7 @@ router.post("/login", async (req, res) => {
     const {password, ...payload} = user
 
     // buat token
-    const token = jwt.sign(payload, "inirahasia")
+    const token = jwt.sign(payload, JWT_KEY)
     res.json({
       message: "login success",
       token
