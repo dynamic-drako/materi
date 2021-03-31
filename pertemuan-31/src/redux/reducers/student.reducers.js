@@ -1,4 +1,4 @@
-import { REGISTER } from "../actions/student.actions";
+import { REGISTER, LOGIN } from "../actions/student.actions";
 
 const token = localStorage.getItem("token");
 
@@ -18,6 +18,12 @@ const student = (state = initialState, action) => {
       console.log("action didalam register", action);
       return {
         registerData: action.payload,
+      };
+    case LOGIN:
+      console.log("action didalam login", action);
+      return {
+        ...state,
+        isLogged: true,
       };
     default:
       return state;

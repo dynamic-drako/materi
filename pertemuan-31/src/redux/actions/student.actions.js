@@ -18,7 +18,7 @@ export const setLogin = (data) => {
   };
 };
 
-// isi dari functionnya
+// isi dari functionnya register
 export const registerActions = (values, event, history) => (dispatch) => {
   event.preventDefault();
   console.log("register actions values", values);
@@ -35,6 +35,31 @@ export const registerActions = (values, event, history) => (dispatch) => {
     .catch((error) => {
       console.log(error);
     });
+};
+
+// isi dari functionnya login
+export const loginActions = (values, event, history) => {
+  return function (dispatch) {
+    event.preventDefault();
+    console.log("register actions values", values);
+    console.log("register actions event", event);
+    console.log("register actions history", history);
+
+    axios
+      .post("https://jwt-express-mongoose.herokuapp.com/auth/login", values)
+      .then((response) => {
+        console.log("response login dari server", response);
+
+        if (response.data.token !== undefined) {
+          localStorage.setItem("token", response.data.token);
+          dispatch(setLogin(response.data.token));
+          history.push("/");
+        } else {
+          alert("PASSWORD ANDA SALAH");
+        }
+      })
+      .catch((error) => console.log(error));
+  };
 };
 
 // export const registerActions = (values, event, history) =>  {
