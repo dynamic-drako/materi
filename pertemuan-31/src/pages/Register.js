@@ -1,6 +1,16 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
+import { registerActions } from "../redux/actions/student.actions";
 
 function Register() {
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const isLogged = useSelector((state) => state);
+  console.log("islogged dari store", isLogged);
+
   const [register, setRegister] = useState({
     name: "",
     password: "",
@@ -17,7 +27,11 @@ function Register() {
   return (
     <div>
       <h1>Register</h1>
-      <form onSubmit={() => {}}>
+      <form
+        onSubmit={(event) => {
+          dispatch(registerActions(register, event, history));
+        }}
+      >
         <input
           type="text"
           name="name"
