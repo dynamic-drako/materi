@@ -1,11 +1,14 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 function App() {
+  const isLogged = useSelector((state) => state.student.isLogged);
+  console.log("app", isLogged);
   return (
     <div className="App">
       <h1>Redux JWT</h1>
