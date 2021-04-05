@@ -7,11 +7,12 @@ function App() {
 
   const uploadImage = () => {
     const formData = new FormData();
-    formData.append("file", imageSelected);
-    formData.append("upload_preset", "gfydmil3");
+    formData.append("image", imageSelected);
+    // formData.append("upload_preset", "gfydmil3");
+    formData.append("key", "35969ba19d2f852cb766c675ee5cdc58");
     axios
-      .post("https://api.cloudinary.com/v1_1/thorthedev/image/upload", formData)
-      .then((response) => setImageUploaded(response.data.url));
+      .post("https://api.imgbb.com/1/upload", formData)
+      .then((response) => setImageUploaded(response.data.data.url));
   };
   return (
     <div>
